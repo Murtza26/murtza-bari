@@ -1,0 +1,17 @@
+Blog Layout:
+
+The page has a Blog header section with an introduction to your blog.
+Each blog post includes a title, a brief summary, and a "Read more" link to allow visitors to explore individual posts in more detail.
+Linking:
+
+The navigation bar now includes a Blog tab linking to the blog.html page.
+Expandable Content:
+
+You can easily add new blog posts by copying the <div class="post"> structure and modifying the title and summary.
+CSS Styles:
+
+The page follows the same style guide as the rest of your website for consistency (with small tweaks for readability and presentation).
+Next Steps:
+You can now populate the Blog section with your own posts and stories. Each post can link to a separate post detail page if you wish to create in-depth articles.
+To make the "Read more" links functional, you can create individual pages for each blog post, such as ai-future.html or creative-problem-solving.html.
+Let me know if you'd like any additional changes or features!
