@@ -73,13 +73,10 @@
             display: inline-block;
         }
         .menu.active {
-            display: block;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
-            text-align: center;
-        }
-        .menu a {
-            padding: 1rem;
-            border-top: 1px solid #fff;
         }
         main {
             padding: 3rem 2rem;
@@ -132,20 +129,25 @@
                 align-items: center;
                 display: none;
             }
-            .menu.active {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
-            .menu-icon {
-                display: block;
-            }
             nav a {
                 font-size: 1.1rem;
                 padding: 1rem;
                 width: 100%;
                 text-align: center;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                align-items: center;
+                background-color: #0056b3;
+                margin-top: 1rem;
+            }
+            .menu.active {
+                display: flex;
             }
         }
     </style>
