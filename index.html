@@ -59,7 +59,7 @@
             border-radius: 5px;
         }
         .menu-icon {
-            display: none;
+            display: none; /* Initially hidden on desktop */
             font-size: 2rem;
             color: white;
             cursor: pointer;
@@ -127,7 +127,7 @@
             nav {
                 flex-direction: column;
                 align-items: center;
-                display: none;
+                display: none; /* Hidden by default */
             }
             nav a {
                 font-size: 1.1rem;
@@ -136,10 +136,10 @@
                 text-align: center;
             }
             .menu-icon {
-                display: block;
+                display: block; /* Visible on mobile */
             }
             .menu {
-                display: none;
+                display: none; /* Hidden by default */
                 flex-direction: column;
                 width: 100%;
                 align-items: center;
@@ -147,7 +147,7 @@
                 margin-top: 1rem;
             }
             .menu.active {
-                display: flex;
+                display: flex; /* Visible when active */
             }
         }
     </style>
@@ -187,3 +187,4 @@
     </script>
 </body>
 </html>
+
