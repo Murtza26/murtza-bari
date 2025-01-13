@@ -43,8 +43,6 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;
-            white-space: nowrap;
         }
         nav a {
             color: white;
@@ -59,6 +57,29 @@
             background-color: #ffcc00;
             color: #0056b3;
             border-radius: 5px;
+        }
+        .menu-icon {
+            display: none;
+            font-size: 2rem;
+            color: white;
+            cursor: pointer;
+            margin-right: 1rem;
+        }
+        .menu {
+            display: flex;
+            justify-content: center;
+        }
+        .menu a {
+            display: inline-block;
+        }
+        .menu.active {
+            display: block;
+            width: 100%;
+            text-align: center;
+        }
+        .menu a {
+            padding: 1rem;
+            border-top: 1px solid #fff;
         }
         main {
             padding: 3rem 2rem;
@@ -101,24 +122,30 @@
         }
         @media (max-width: 768px) {
             header h1 {
-                font-size: 3rem; /* Adjusted font size for smaller screens */
+                font-size: 3rem;
             }
             header p {
-                font-size: 1.2rem; /* Slightly larger font for better readability */
+                font-size: 1.2rem;
             }
             nav {
-                flex-direction: column; /* Stack navigation links vertically */
-                padding: 1rem;
+                flex-direction: column;
+                align-items: center;
+                display: none;
+            }
+            .menu.active {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+            .menu-icon {
+                display: block;
             }
             nav a {
-                font-size: 1.1rem; /* Slight increase for better navigation text size */
-                margin: 0.5rem 0; /* Adjust the margin to make it more readable */
-            }
-            main {
-                padding: 3rem 1.5rem; /* Slightly more padding for better spacing */
-            }
-            footer p {
-                font-size: 1.1rem; /* Ensuring footer text is readable */
+                font-size: 1.1rem;
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
             }
         }
     </style>
@@ -129,11 +156,14 @@
         <p>Creative Mind | Tech Enthusiast | Innovator</p>
     </header>
     <nav>
-        <a href="index.html">Home</a>
-        <a href="about.html">About Me</a>
-        <a href="projects.html">Projects</a>
-        <a href="contact.html">Contact</a>
-        <a href="blog.html">Blog</a>
+        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+        </div>
     </nav>
     <main>
         <section class="section">
@@ -145,5 +175,13 @@
     <footer>
         <p>&copy; 2025 Murtza Bari. Built with passion and creativity. <a href="#top">Back to top</a></p>
     </footer>
+
+    <script>
+        // Toggle the mobile menu visibility
+        function toggleMenu() {
+            const menu = document.querySelector('.menu');
+            menu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>
