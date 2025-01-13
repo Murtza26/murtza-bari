@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Home page of Murtza Bari, showcasing creative projects and technological innovations.">
+    <meta name="author" content="Murtza Bari">
+    <title>Home - Murtza Bari</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Open+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', 'Open Sans', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background: linear-gradient(to right, #0066cc, #0099ff);
+            color: white;
+            padding: 2.5rem 1rem;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3.5rem;
+            font-weight: 700;
+        }
+        header p {
+            margin: 0.8rem 0 0;
+            font-size: 1.3rem;
+            font-weight: 400;
+            opacity: 0.9;
+        }
+        
+        /* Navigation Bar */
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #0056b3;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Style the hamburger menu */
+        .menu-toggle {
+            display: none;
+        }
+
+        label.menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+        }
+
+        label.menu-icon:before {
+            content: "\2630"; /* Hamburger Icon */
+        }
+
+        /* The navigation links */
+        .menu {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .menu a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+            font-weight: 600;
+            font-size: 1rem;
+            padding: 0.5rem 1rem;
+            transition: background-color 0.3s ease;
+        }
+        .menu a:hover {
+            background-color: #ffcc00;
+            color: #0056b3;
+            border-radius: 5px;
+        }
+
+        /* When the checkbox is checked, show the menu */
+        .menu-toggle:checked + label.menu-icon + .menu {
+            display: block;
+        }
+
+        .menu {
+            display: none;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        /* Responsive styles for mobile */
+        @media (max-width: 768px) {
+            /* Display hamburger menu on smaller screens */
+            label.menu-icon {
+                display: block;
+            }
+
+            /* Hide regular menu links on mobile */
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #0056b3;
+            }
+            
+            /* Show menu when the checkbox is checked */
+            .menu-toggle:checked + label.menu-icon + .menu {
+                display: block;
+            }
+
+            .menu a {
+                text-align: center;
+                padding: 1rem;
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Murtza Bari</h1>
+        <p>Creative Mind | Tech Enthusiast | Innovator</p>
+    </header>
+    <nav>
+        <!-- Hidden checkbox that controls the menu visibility -->
+        <input type="checkbox" class="menu-toggle" id="menu-toggle">
+        <label class="menu-icon" for="menu-toggle"></label>
+
+        <!-- Menu items -->
+        <div class="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About Me</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+            <a href="blog.html">Blog</a>
+        </div>
+    </nav>
+    <main>
+        <section class="section">
+            <h2>Welcome to My World</h2>
+            <p>Hi, I'm Murtza Bari! I am passionate about technology, creativity, and innovation. Through this website, I share my projects, ideas, and thoughts on how technology can transform the world.</p>
+            <p>On this site, you will find my latest projects, insights, and blog posts. I am always excited about exploring new technologies and concepts, and I believe in the power of learning and collaboration.</p>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Murtza Bari. Built with passion and creativity. <a href="#top">Back to top</a></p>
+    </footer>
+</body>
+</html>
