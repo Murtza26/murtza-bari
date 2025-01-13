@@ -96,13 +96,15 @@
             text-decoration: underline;
         }
         .contact-form {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            flex-wrap: wrap;
             gap: 1.5rem;
+            justify-content: center;
         }
         .contact-form input,
         .contact-form textarea {
             width: 100%;
+            max-width: 500px;
             padding: 1rem;
             border-radius: 5px;
             border: 1px solid #ccc;
@@ -116,6 +118,8 @@
             border: none;
             font-size: 1.2rem;
             transition: background-color 0.3s ease;
+            width: 100%;
+            max-width: 200px;
         }
         .contact-form input[type="submit"]:hover {
             background-color: #0056b3;
@@ -151,8 +155,10 @@
             main {
                 padding: 2rem 1rem;
             }
-            .contact-form {
-                grid-template-columns: 1fr;
+            .contact-form input,
+            .contact-form textarea,
+            .contact-form input[type="submit"] {
+                max-width: 100%;
             }
         }
     </style>
@@ -177,7 +183,7 @@
             <div class="contact-info">
                 <h3>Contact Information:</h3>
                 <p><strong>Email:</strong> <a href="mailto:murtzabari@gmail.com">murtzabari@gmail.com</a></p>
-                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/murtza-bari-5057a7244/?originalSubdomain=uk">linkedin.com/in/murtza-bari-5057a7244/</a></p>
+                <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/murtza-bari-5057a7244/?originalSubdomain=uk" target="_blank">linkedin.com/in/murtza-bari</a></p>
             </div>
 
             <h3>Or, send me a message:</h3>
