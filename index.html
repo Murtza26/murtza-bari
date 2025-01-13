@@ -43,6 +43,8 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow-x: auto;
+            white-space: nowrap;
         }
         nav a {
             color: white;
@@ -104,8 +106,13 @@
             header p {
                 font-size: 1.2rem; /* Slightly larger font for better readability */
             }
+            nav {
+                flex-direction: column; /* Stack navigation links vertically */
+                padding: 1rem;
+            }
             nav a {
                 font-size: 1.1rem; /* Slight increase for better navigation text size */
+                margin: 0.5rem 0; /* Adjust the margin to make it more readable */
             }
             main {
                 padding: 3rem 1.5rem; /* Slightly more padding for better spacing */
@@ -140,4 +147,3 @@
     </footer>
 </body>
 </html>
-
