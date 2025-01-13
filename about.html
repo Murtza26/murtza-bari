@@ -43,7 +43,7 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;  /* Ensure horizontal scrolling is enabled */
+            overflow-x: auto;  /* Enable horizontal scrolling */
         }
         nav a {
             color: white;
@@ -105,14 +105,17 @@
             header p {
                 font-size: 1.2rem;
             }
+            nav {
+                display: flex;
+                justify-content: flex-start;
+                overflow-x: auto;  /* Horizontal scrolling */
+                padding: 0.5rem 0;
+            }
             nav a {
                 font-size: 1.1rem;
-            }
-            main {
-                padding: 3rem 1.5rem;
-            }
-            footer p {
-                font-size: 1.1rem;
+                padding: 1rem 2rem;
+                text-align: center;
+                flex-shrink: 0; /* Prevent shrinking */
             }
         }
     </style>
@@ -141,3 +144,4 @@
     </footer>
 </body>
 </html>
+
