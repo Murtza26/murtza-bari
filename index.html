@@ -34,6 +34,8 @@
             font-weight: 400;
             opacity: 0.9;
         }
+        
+        /* Navigation Bar */
         nav {
             display: flex;
             justify-content: center;
@@ -43,9 +45,33 @@
             top: 0;
             z-index: 1000;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            overflow-x: auto;  /* Enable horizontal scrolling */
         }
-        nav a {
+
+        /* Style the hamburger menu */
+        .menu-toggle {
+            display: none;
+        }
+
+        label.menu-icon {
+            display: none;
+            cursor: pointer;
+            font-size: 2rem;
+            padding: 10px;
+            background-color: #0056b3;
+            color: white;
+        }
+
+        label.menu-icon:before {
+            content: "\2630"; /* Hamburger Icon */
+        }
+
+        /* The navigation links */
+        .menu {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .menu a {
             color: white;
             text-decoration: none;
             margin: 0 1rem;
@@ -54,82 +80,47 @@
             padding: 0.5rem 1rem;
             transition: background-color 0.3s ease;
         }
-        nav a:hover {
+        .menu a:hover {
             background-color: #ffcc00;
             color: #0056b3;
             border-radius: 5px;
         }
-        .menu-icon {
-            display: none; /* Initially hidden on desktop */
-            font-size: 2rem;
-            color: white;
-            cursor: pointer;
-            margin-right: 1rem;
+
+        /* When the checkbox is checked, show the menu */
+        .menu-toggle:checked + label.menu-icon + .menu {
+            display: block;
         }
-        main {
-            padding: 3rem 2rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: #ffffff;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-            border-radius: 10px;
+
+        .menu {
+            display: none;
+            width: 100%;
+            flex-direction: column;
         }
-        .section {
-            margin-bottom: 3rem;
-        }
-        .section h2 {
-            color: #0066cc;
-            border-bottom: 4px solid #0066cc;
-            display: inline-block;
-            padding-bottom: 0.5rem;
-            margin-bottom: 1.5rem;
-            font-size: 2.5rem;
-            font-weight: 700;
-        }
-        .section p {
-            font-size: 1.2rem;
-            margin-bottom: 1.5rem;
-        }
-        footer {
-            background-color: #0056b3;
-            color: white;
-            text-align: center;
-            padding: 1.5rem 1rem;
-            margin-top: 3rem;
-        }
-        footer a {
-            color: #ffcc00;
-            text-decoration: none;
-            font-weight: 600;
-        }
-        footer a:hover {
-            text-decoration: underline;
-        }
+
+        /* Responsive styles for mobile */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 3rem;
+            /* Display hamburger menu on smaller screens */
+            label.menu-icon {
+                display: block;
             }
-            header p {
-                font-size: 1.2rem;
+
+            /* Hide regular menu links on mobile */
+            .menu {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background-color: #0056b3;
             }
-            nav {
-                display: flex;
-                justify-content: flex-start;
-                overflow-x: auto;  /* Horizontal scrolling */
-                padding: 0.5rem 0;
+            
+            /* Show menu when the checkbox is checked */
+            .menu-toggle:checked + label.menu-icon + .menu {
+                display: block;
             }
-            nav a {
-                font-size: 1.1rem;
-                padding: 1rem 2rem;
+
+            .menu a {
                 text-align: center;
-                flex-shrink: 0; /* Prevent shrinking */
-            }
-            nav a:hover {
-                background-color: #ffcc00;
-                color: #0056b3;
-            }
-            .menu-icon {
-                display: block; /* Visible on mobile */
+                padding: 1rem;
+                width: 100%;
             }
         }
     </style>
@@ -140,7 +131,11 @@
         <p>Creative Mind | Tech Enthusiast | Innovator</p>
     </header>
     <nav>
-        <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
+        <!-- Hidden checkbox that controls the menu visibility -->
+        <input type="checkbox" class="menu-toggle" id="menu-toggle">
+        <label class="menu-icon" for="menu-toggle"></label>
+
+        <!-- Menu items -->
         <div class="menu">
             <a href="index.html">Home</a>
             <a href="about.html">About Me</a>
@@ -159,13 +154,6 @@
     <footer>
         <p>&copy; 2025 Murtza Bari. Built with passion and creativity. <a href="#top">Back to top</a></p>
     </footer>
-
-    <script>
-        // Toggle the mobile menu visibility
-        function toggleMenu() {
-            const menu = document.querySelector('.menu');
-            menu.classList.toggle('active');
-        }
-    </script>
 </body>
 </html>
+
